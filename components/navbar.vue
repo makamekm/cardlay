@@ -9,11 +9,11 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-end">
-        <nuxt-link class="navbar-item p-l-6 p-r-6" to="/aboutus" active-class="is-active" exact>
-          About Us
+        <nuxt-link class="navbar-item p-l-6 p-r-6" to="/long" active-class="is-active" exact>
+          Loading Example
         </nuxt-link>
-        <nuxt-link class="navbar-item p-l-6 p-r-6" to="/blog" active-class="is-active" exact>
-          Blog
+        <nuxt-link class="navbar-item p-l-6 p-r-6" to="/404" active-class="is-active" exact>
+          404
         </nuxt-link>
         <nuxt-link class="navbar-item has-icon p-l-6 p-r-6" to="/search" active-class="is-active" exact>
           <div class="has-text-centered">
