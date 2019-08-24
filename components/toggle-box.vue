@@ -52,6 +52,7 @@ export default class extends Vue {
 
   mounted() {
     setImmediate(() => this.setStyle());
+    this.inputValue = this.value;
   }
 
   @Watch('value') watchValue(value) {

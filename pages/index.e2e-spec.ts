@@ -6,6 +6,6 @@ describe('homepage', () => {
   });
 
   test('it should render correctly', async () => {
-    expect(containsText('Hello World!')).toBeTruthy();
+    expect(containsText('Expenses')).toBeTruthy();
   });
 });
