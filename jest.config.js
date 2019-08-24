@@ -1,4 +1,4 @@
-const projects = (process.env.JEST_PROJECT || 'unit,int').split(',');
+const projects = (process.env.JEST_PROJECT || "unit,int").split(",");
 
 module.exports = {
   projects: [
