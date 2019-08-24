@@ -16,7 +16,7 @@
     "start": "nuxt start",
     "build": "nuxt build",
     "heroku-postbuild": "npm run build",
-    "dev:api": "ts-node-dev --project ./tsconfig.express.json ./index.ts",
+    "dev:api": "ts-node-dev --project ./tsconfig.express.json ./api.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "JEST_PROJECT=unit,ini,e2e jest",
     "test:simple": "JEST_PROJECT=unit,ini jest",
