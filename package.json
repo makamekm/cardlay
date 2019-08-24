@@ -13,7 +13,7 @@
     "dev": "IS_SEPARATE=true run-p dev:ui dev:api dev:gql",
     "dev:ui": "nuxt",
     "dev:gql": "ts-node-dev --project ./tsconfig.express.json generate-typings",
-    "start": "nuxt start",
+    "start": "NODE_ENV=production HOST=0.0.0.0 nuxt start",
     "build": "nuxt build",
     "heroku-postbuild": "npm run build",
     "dev:api": "ts-node-dev --project ./tsconfig.express.json ./api.ts",
