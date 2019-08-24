@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": [
+      "esnext",
+      "dom",
+      "esnext.asynciterable"
+    ],
+    "importHelpers": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "stripInternal": true,
+    "skipLibCheck": true,
+    "noLib": false,
+    "baseUrl": ".",
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "types": [
+      "@nuxt/vue-app",
+      "@types/node",
+      "@types/webpack-env",
+      "@types/expect-puppeteer",
+      "@types/jest-environment-puppeteer",
+      "@types/jest-image-snapshot",
+      "@types/puppeteer",
+      "buefy",
+      "node",
+      "jest"
+    ],
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "strict": true
+  },
+  "compileOnSave": false,
+  "suppressImplicitAnyIndexErrors": true,
+  "exclude": [
+    "node_modules",
+    ".next",
+    "dist"
+  ]
+}
