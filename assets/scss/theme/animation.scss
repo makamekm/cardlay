@@ -1,0 +1,109 @@
+$transition-distance: 5rem;
+
+@keyframes on-appear-slide-down-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-$transition-distance);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.on-appear-slide-down {
+  opacity: 0;
+  transform: translateY(-$transition-distance);
+  animation: on-appear-slide-down-animation 0.4s ease-in-out forwards;
+}
+
+@keyframes on-appear-slide-up-animation {
+  0% {
+    opacity: 0;
+    transform: translateY($transition-distance);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.on-appear-slide-up {
+  opacity: 0;
+  transform: translateY($transition-distance);
+  animation: on-appear-slide-up-animation 0.4s ease-in-out forwards;
+}
+
+@keyframes on-appear-scale-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.on-appear-scale {
+  opacity: 0;
+  transform: scale(0);
+  animation: on-appear-scale-animation 0.4s ease-in-out forwards;
+}
+
+@keyframes on-appear-scale-left-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateX(-$transition-distance);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.on-appear-scale-left {
+  opacity: 0;
+  transform: scale(0) translateX(-$transition-distance);
+  animation: on-appear-scale-left-animation 0.4s ease-in-out forwards;
+}
+
+@keyframes on-appear-scale-right-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateX($transition-distance);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.on-appear-scale-right {
+  opacity: 0;
+  transform: scale(0) translateX($transition-distance);
+  animation: on-appear-scale-right-animation 0.4s ease-in-out forwards;
+}
+
+@keyframes on-appear-rotate-animation {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+
+.on-appear-rotate {
+  opacity: 0;
+  transform: rotateY(90deg);
+  animation: on-appear-rotate-animation 0.4s ease-in-out forwards;
+}
+
+@for $i from 0 through 20 {
+  .on-delay-#{$i} {
+    animation-delay: #{$i * 0.05 + 0}s;
+  }
+}

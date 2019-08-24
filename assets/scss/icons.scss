@@ -1,0 +1,53 @@
+.i {
+  display: inline-block;
+  content: '';
+  background-size: contain;
+
+  &.sort {
+    content: url('../icons/sort.svg');
+  }
+
+  &.sort-up {
+    content: url('../icons/sort_up.svg');
+  }
+
+  &.sort-down {
+    content: url('../icons/sort_down.svg');
+  }
+
+  &.edit {
+    content: url('../icons/edit.svg');
+  }
+
+  &.is-size-1 {
+    height: $size-1;
+  }
+
+  &.is-size-2 {
+    height: $size-2;
+  }
+
+  &.is-size-3 {
+    height: $size-3;
+  }
+
+  &.is-size-4 {
+    height: $size-4;
+  }
+
+  &.is-size-5 {
+    height: $size-5;
+  }
+
+  &.is-size-6 {
+    height: $size-6;
+  }
+
+  &.is-size-7 {
+    height: $size-7;
+  }
+
+  &.is-size-8 {
+    height: $size-8;
+  }
+}
