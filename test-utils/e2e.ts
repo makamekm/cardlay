@@ -14,7 +14,7 @@ export const findAll = async (selector) => {
   return page.$$(selector);
 };
 
-export const containsText = async (text, wrapperSelector) => {
+export const containsText = async (text, wrapperSelector?) => {
   const textSelector = `//text()[contains(.,'${text}')]`;
   const wrapper = wrapperSelector ? await find(wrapperSelector) : page;
   await page.waitForXPath(textSelector);

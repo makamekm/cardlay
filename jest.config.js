@@ -1,3 +1,5 @@
+const projects = (process.env.JEST_PROJECT || 'unit,int').split(',');
+
 module.exports = {
   projects: [
     {
@@ -9,7 +11,31 @@ module.exports = {
         "vue",
       ],
       "rootDir": ".",
-      "testRegex": "\\.(spec|int-spec).(t|j)s$",
+      "testRegex": "\\.(spec).(t|j)s$",
+      "moduleNameMapper": {
+        "^~/(.*)$": "<rootDir>/$1",
+        "^~~/(.*)$": "<rootDir>/$1",
+      },
+      "transform": {
+        "^.+\\.(t|j)s$": "ts-jest",
+        ".*\\.(vue)$": "vue-jest",
+      },
+      "snapshotSerializers": [
+        "jest-serializer-vue",
+      ],
+      "testURL": "http://localhost:3000/",
+      "testEnvironment": "jsdom",
+    },
+    {
+      "displayName": "int",
+      "moduleFileExtensions": [
+        "js",
+        "json",
+        "ts",
+        "vue",
+      ],
+      "rootDir": ".",
+      "testRegex": "\\.(int-spec).(t|j)s$",
       "moduleNameMapper": {
         "^~/(.*)$": "<rootDir>/$1",
         "^~~/(.*)$": "<rootDir>/$1",
@@ -48,7 +74,31 @@ module.exports = {
       ],
       "testURL": "http://localhost:3000/",
     },
-  ],
+    {
+      "displayName": "p2p",
+      "moduleFileExtensions": [
+        "js",
+        "json",
+        "ts",
+        "vue",
+      ],
+      "preset": "jest-puppeteer",
+      "rootDir": ".",
+      "testRegex": "\\.p2p-spec.(t|j)s$",
+      "moduleNameMapper": {
+        "^~/(.*)$": "<rootDir>/$1",
+        "^~~/(.*)$": "<rootDir>/$1",
+      },
+      "transform": {
+        "^.+\\.(t|j)s$": "ts-jest",
+        ".*\\.(vue)$": "vue-jest",
+      },
+      "snapshotSerializers": [
+        "jest-serializer-vue",
+      ],
+      "testURL": "http://localhost:3000/",
+    },
+  ].filter(p => projects.includes(p.displayName)),
   "collectCoverage": true,
   "coverageDirectory": "./coverage",
   "collectCoverageFrom": [
