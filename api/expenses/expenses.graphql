@@ -1,0 +1,18 @@
+type Expenses {
+  id: String!
+  date: String
+  amount: Float
+  merchant: String
+  currency: String
+  categoryName: String
+  parentId: String
+  status: ExpensesStatus
+}
+
+type ExpensesStatus {
+  stage: String!
+}
+
+type Query {
+  expenses: [Expenses]
+}
