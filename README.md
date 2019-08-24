@@ -1,4 +1,4 @@
-# cardlay
+# Cardlay
 
 [Heroku Link: https://cardlay.herokuapp.com/](https://cardlay.herokuapp.com/)
 
