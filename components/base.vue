@@ -16,32 +16,29 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue, Prop, Inject } from "vue-property-decorator";
 import Navbar from '~/components/navbar.vue';
 
-export default {
+@Component({
   components: {
     Navbar
   },
-  data: () => ({
-    isMounted: false,
-  }),
+})
+export default class extends Vue {
+  isMounted = false;
+
   mounted() {
     this.isMounted = true;
-  },
-  computed: {
-    isLoading() {
-      return this.$store.state.auth.isLoading
-        || this.$store.state.app.isLoading;
-    },
-    user() {
-      return this.$store.state.auth.user;
-    },
-  },
-  destroyed() {
-    if (process.client) {
-    }
-  },
+  }
+
+  get isLoading() {
+    return this.$store.state.auth.isLoading || this.$store.state.app.isLoading;
+  }
+
+  get user() {
+    return this.$store.state.auth.user;
+  }
 }
 </script>
 

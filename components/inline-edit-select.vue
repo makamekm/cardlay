@@ -44,10 +44,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue, Prop, Inject } from "vue-property-decorator";
 import Popper from 'popper.js';
 
-export default {
+@Component({
   props: {
     value: {
       type: [String, Object, Number],
@@ -62,45 +63,61 @@ export default {
       default: 'Select Value',
     },
   },
-  data: () => ({
-    isEditing: false,
-    isClosing: false,
-  }),
+})
+export default class extends Vue {
+  isEditing = false;
+  isClosing = false;
+  items: {
+    key: string;
+    label: string;
+  }[];
+  placeholder: string;
+  popper: Popper;
+  $refs: {
+    target: HTMLInputElement;
+    popup: HTMLInputElement;
+  };
+
   mounted() {
   	this.popper = new Popper(this.$refs.target, this.$refs.popup, {
       placement: 'bottom'
     });
-  },
-  methods: {
-    onStartEdit() {
-      this.isEditing = true;
-      setImmediate(() => {
-        this.$refs.popup.style.width = `${Math.ceil(this.$refs.target.getBoundingClientRect().width)}px`;
-        this.$refs.popup.childNodes[0].focus();
-        this.popper.update();
-      });
-    },
-    onFocusNext(index) {
-      if (index >= 0 && index < this.items.length) {
-        this.$refs.popup.childNodes[index].focus();
-      }
-    },
-    onContinueEdit() {
-      this.isClosing = false;
-      this.isEditing = true;
-    },
-    onStopEdit() {
-      this.isClosing = true;
-      setTimeout(() => {
-        if (this.isClosing) {
-          this.isEditing = false;
-        }
-      }, 100);
-    },
-    onSaveEdit(value) {
-      this.isEditing = false;
-      this.$emit('change', value);
+  }
+
+  onStartEdit() {
+    this.isEditing = true;
+    setImmediate(() => {
+      this.$refs.popup.style.width = `${Math.ceil(this.$refs.target.getBoundingClientRect().width)}px`;
+      const child = this.$refs.popup.childNodes[0] as HTMLElement;
+      child.focus();
+      this.popper.update();
+    });
+  }
+
+  onFocusNext(index) {
+    if (index >= 0 && index < this.items.length) {
+      const child = this.$refs.popup.childNodes[index] as HTMLElement;
+      child.focus();
     }
+  }
+
+  onContinueEdit() {
+    this.isClosing = false;
+    this.isEditing = true;
+  }
+
+  onStopEdit() {
+    this.isClosing = true;
+    setTimeout(() => {
+      if (this.isClosing) {
+        this.isEditing = false;
+      }
+    }, 100);
+  }
+
+  onSaveEdit(value) {
+    this.isEditing = false;
+    this.$emit('change', value);
   }
 }
 </script>

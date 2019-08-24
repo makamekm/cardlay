@@ -40,41 +40,50 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['value'],
-  data: () => ({
-    isTryingToSave: false,
-    isEditing: false,
-    inputValue: '',
-  }),
-  methods: {
-    onStartEdit() {
-      this.inputValue = this.value;
-      this.isEditing = true;
-      this.isTryingToSave = false;
-      setImmediate(() => {
-        this.$refs.input.focus();
-        this.$refs.input.select();
-      });
-    },
-    onStopEdit() {
-      if (!this.isTryingToSave) {
-        this.isEditing = false;
-      }
-    },
-    onSaveEdit() {
+<script lang="ts">
+import { Component, Vue, Prop, Inject } from "vue-property-decorator";
+
+@Component({
+  props: {
+    value: String
+  },
+})
+export default class extends Vue {
+  isTryingToSave = false;
+  isEditing = false;
+  inputValue = '';
+  value: string;
+
+  onStartEdit() {
+    this.inputValue = this.value;
+    this.isEditing = true;
+    this.isTryingToSave = false;
+    setImmediate(() => {
+      const input = this.$refs.input as HTMLInputElement;
+      input.focus();
+      input.select();
+    });
+  }
+
+  onStopEdit() {
+    if (!this.isTryingToSave) {
       this.isEditing = false;
-      this.$emit('change', this.inputValue);
-    },
-    onSaveMouseDown() {
-      this.isTryingToSave = true;
-    },
-    onSaveMouseLeave() {
-      if (this.isTryingToSave) {
-        this.isTryingToSave = false;
-        this.isEditing = false;
-      }
+    }
+  }
+
+  onSaveEdit() {
+    this.isEditing = false;
+    this.$emit('change', this.inputValue);
+  }
+
+  onSaveMouseDown() {
+    this.isTryingToSave = true;
+  }
+
+  onSaveMouseLeave() {
+    if (this.isTryingToSave) {
+      this.isTryingToSave = false;
+      this.isEditing = false;
     }
   }
 }

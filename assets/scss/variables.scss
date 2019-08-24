@@ -37,3 +37,18 @@ $colors: (
   "danger": ($danger, $danger-invert),
   "transparent": (transparent, $text),
 );
+
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+$table-cell-padding: 0.75em 1.6rem;
+$table-head-cell-color: $text;
+$table-head-cell-border-width: 0 1px 1px;
+$table-foot-cell-border-width: 1px 0 0;
+$table-cell-border: solid 1px #EFF1F1;
+$table-striped-row-even-background-color: #FAFBFB;
+
+$button-hover-background-color: $text;
+$button-active-color: findColorInvert($text);
+$button-active-background-color: darken($text, 4%);

@@ -1,0 +1,38 @@
+.navbar {
+  margin-bottom: 1px;
+  background-color: #fff;
+  color: $text;
+  transition: min-height 500ms;
+  min-height: 5rem;
+  max-height: 5rem;
+
+  .navbar-menu, .navbar-brand {
+    .navbar-item {
+      transition: background-color 300ms;
+
+      &:hover, &:focus {
+        background-color: rgba($theme, 0.2);
+      }
+    }
+  }
+
+  .navbar-menu {
+    & > * > .navbar-item {
+      transition: background-color 300ms;
+  
+      &:hover, &:focus {
+        background-color: rgba($theme, 0.075);
+      }
+
+      &.has-icon {
+        &:hover, &:focus {
+          background-color: rgba($theme, 0.2);
+        }
+      }
+    }
+  }
+
+  .navbar-item {
+    color: $text !important;
+  }
+}

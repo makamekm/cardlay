@@ -2,16 +2,17 @@
   <div></div>
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue, Prop, Inject } from "vue-property-decorator";
 
-export default {
-  methods: {
-    start() {
-      this.$store.dispatch('app/setLoading', true);
-    },
-    finish() {
-      this.$store.dispatch('app/setLoading', false);
-    }
+@Component({})
+export default class extends Vue {
+  start() {
+    this.$store.dispatch('app/setLoading', true);
+  }
+
+  finish() {
+    this.$store.dispatch('app/setLoading', false);
   }
 }
 </script>

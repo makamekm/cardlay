@@ -17,8 +17,11 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Component, Vue, Prop, Inject, Watch } from "vue-property-decorator";
+import Popper from 'popper.js';
+
+@Component({
   props: {
     value: {
       type: Boolean,
@@ -33,55 +36,62 @@ export default {
       default: 'Decline',
     },
   },
-  watch: {
-    value(value) {
-      this.inputValue = value;
-      this.setStyle();
-    },
-  },
-  data() {
-    return {
-      inputValue: this.value,
-      rerender: 0,
-      left: 0,
-      right: 0,
-    };
-  },
+})
+export default class extends Vue {
+  inputValue = null;
+  rerender = 0;
+  left: number | string = 0;
+  right: number | string = 0;
+  value: Boolean;
+  placeholderTrue: string;
+  placeholderFalse: string;
+  $refs: {
+    true: HTMLInputElement;
+    false: HTMLInputElement;
+  };
+
   mounted() {
     setImmediate(() => this.setStyle());
-  },
-  computed: {
-    getFalseWidth() {
-      return this.$refs.false ? this.$refs.false.offsetWidth : 0;
-    },
-    getTrueWidth() {
-      return this.$refs.true ? this.$refs.true.offsetWidth : 0;
-    },
-    getIndicatorLeftPosition() {
-      return this.inputValue === false
-        ? '0.3rem'
-        : this.inputValue === null ? '50%' : `calc(${Math.ceil(this.getFalseWidth)}px)`;
-    },
-    getIndicatorRightPosition() {
-      return this.inputValue === false
-        ? `calc(0.6rem + ${Math.ceil(this.getTrueWidth)}px)`
-        : this.inputValue === null ? '50%' : '0.3rem';
+  }
+
+  @Watch('value') watchValue(value) {
+    this.inputValue = value;
+    this.setStyle();
+  }
+
+  get getFalseWidth() {
+    return this.$refs.false ? this.$refs.false.offsetWidth : 0;
+  }
+
+  get getTrueWidth() {
+    return this.$refs.true ? this.$refs.true.offsetWidth : 0;
+  }
+
+  get getIndicatorLeftPosition() {
+    return this.inputValue === false
+      ? '0.3rem'
+      : this.inputValue === null ? '50%' : `calc(${Math.ceil(this.getFalseWidth)}px)`;
+  }
+
+  get getIndicatorRightPosition() {
+    return this.inputValue === false
+      ? `calc(0.6rem + ${Math.ceil(this.getTrueWidth)}px)`
+      : this.inputValue === null ? '50%' : '0.3rem';
+  }
+
+  onToggle(value) {
+    if (this.inputValue === value) {
+      this.inputValue = null;
+    } else {
+      this.inputValue = value;
     }
-  },
-  methods: {
-    onToggle(value) {
-      if (this.inputValue === value) {
-        this.inputValue = null;
-      } else {
-        this.inputValue = value;
-      }
-      this.$emit('change', this.inputValue);
-      this.setStyle();
-    },
-    setStyle() {
-      this.left = this.getIndicatorLeftPosition;
-      this.right = this.getIndicatorRightPosition;
-    }
+    this.$emit('change', this.inputValue);
+    this.setStyle();
+  }
+
+  setStyle() {
+    this.left = this.getIndicatorLeftPosition;
+    this.right = this.getIndicatorRightPosition;
   }
 }
 </script>

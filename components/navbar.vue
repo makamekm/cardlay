@@ -52,17 +52,17 @@
   </nav>
 </template>
 
-<script>
-import Navbar from '~/components/navbar.vue';
+<script lang="ts">
+import { Component, Vue, Prop, Inject } from "vue-property-decorator";
 
-export default {
-  computed: {
-    isLoading() {
-      return this.$store.state.auth.isLoading;
-    },
-    user() {
-      return this.$store.state.auth.user;
-    },
-  },
+@Component({})
+export default class extends Vue {
+  get isLoading() {
+    return this.$store.state.auth.isLoading;
+  }
+
+  get user() {
+    return this.$store.state.auth.user;
+  }
 }
 </script>

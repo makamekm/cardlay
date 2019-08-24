@@ -1,0 +1,75 @@
+$space-amounts: 0, 0.05rem, 0.1rem, 0.2rem, 0.4rem, 0.8rem, 1.2rem, 1.6rem, 2.0rem, 3.0rem, 4.0rem, 5.0rem, 6.0rem, 7.0rem
+$sides: top, bottom, left, right
+
+@function reverse($list, $recursive: false)
+   $result: ()
+   @for $i from length($list)*-1 through -1
+      @if type-of(nth($list, abs($i))) == list and $recursive
+        $result: append($result, reverse(nth($list, abs($i)), $recursive))
+      @else
+        $result: append($result, nth($list, abs($i)))
+   @return $result
+
+@each $space in reverse($space-amounts)
+  $i: index($space-amounts, $space) - 1
+
+  @each $side in $sides
+    .m-#{str-slice($side, 0, 1)}-#{$i}
+      margin-#{$side}: #{$space} !important
+    +mobile
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-mobile
+        margin-#{$side}: #{$space} !important
+    +tablet
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-tablet
+        margin-#{$side}: #{$space} !important
+    +tablet-only
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-tablet-only
+        margin-#{$side}: #{$space} !important
+    +touch
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-touch
+        margin-#{$side}: #{$space} !important
+    +desktop
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-desktop
+        margin-#{$side}: #{$space} !important
+    +desktop-only
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-desktop-only
+        margin-#{$side}: #{$space} !important
+    +widescreen
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-widescreen
+        margin-#{$side}: #{$space} !important
+    +widescreen-only
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-widescreen-only
+        margin-#{$side}: #{$space} !important
+    +fullhd
+      &.m-#{str-slice($side, 0, 1)}-#{$i}-fullhd
+        margin-#{$side}: #{$space} !important
+  
+    .p-#{str-slice($side, 0, 1)}-#{$i}
+      padding-#{$side}: #{$space} !important
+    +mobile
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-mobile
+        padding-#{$side}: #{$space} !important
+    +tablet
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-tablet
+        padding-#{$side}: #{$space} !important
+    +tablet-only
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-tablet-only
+        padding-#{$side}: #{$space} !important
+    +touch
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-touch
+        padding-#{$side}: #{$space} !important
+    +desktop
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-desktop
+        padding-#{$side}: #{$space} !important
+    +desktop-only
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-desktop-only
+        padding-#{$side}: #{$space} !important
+    +widescreen
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-widescreen
+        padding-#{$side}: #{$space} !important
+    +widescreen-only
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-widescreen-only
+        padding-#{$side}: #{$space} !important
+    +fullhd
+      &.p-#{str-slice($side, 0, 1)}-#{$i}-fullhd
+        padding-#{$side}: #{$space} !important

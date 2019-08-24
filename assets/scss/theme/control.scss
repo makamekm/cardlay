@@ -1,0 +1,63 @@
+.control.is-mt-like {
+  position: relative;
+
+  & > label {
+    display: block;
+    position: absolute;
+    top: $size-4 / 2;
+    pointer-events: none;
+    left: $size-4 / 2;
+    font-weight: normal;
+    transition: all 300ms ease;
+    color: $text;
+    font-weight: 600;
+    z-index: 4;
+  }
+
+  input {
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &:focus, &:not(:placeholder-shown) {
+      & ~ label {
+        top: -$size-7 * 1.5;
+        font-size: $size-7;
+        left: 0;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.input, .taginput .taginput-container.is-focusable, .textarea {
+  transition: all 300ms;
+  border-color: $theme;
+
+  &:hover, &.is-focused {
+    border-color: darken($theme, 30%);
+  }
+}
+
+.field {
+  input, textarea, select, .is-focusable {
+    transition: all 300ms;
+    border-color: $theme;
+
+    &:hover, &.is-focused {
+      border-color: darken($theme, 30%);
+    }
+  }
+
+  .button {
+    background-clip: padding-box;
+  }
+}
+
+.control {
+  &.has-icons-left {
+    .icon.is-left {
+      transform: scale(0.75);
+    }
+  }
+}
