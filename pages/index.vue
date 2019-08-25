@@ -128,11 +128,11 @@
 import InlineEditText from '../components/inline-edit-text.vue';
 import InlineEditSelect from '../components/inline-edit-select.vue';
 import ToggleBox from '../components/toggle-box.vue';
-import { Component, Vue, Prop, Inject } from "vue-property-decorator";
-import { namespace } from "vuex-class";
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
 
-const ExpensesStore = namespace("expenses");
-const LocalStorage = namespace("localStorage");
+const ExpensesStore = namespace('expenses');
+const LocalStorage = namespace('localStorage');
 
 @Component({
   components: {
@@ -140,19 +140,19 @@ const LocalStorage = namespace("localStorage");
     InlineEditSelect,
     ToggleBox,
   },
-  fetch: async props => props.store.dispatch("expenses/loadItems"),
+  fetch: async props => props.store.dispatch('expenses/loadItems'),
 })
 export default class extends Vue {
-  @ExpensesStore.Getter("sortedItems") data;
-  @ExpensesStore.Getter("total") total;
-  @ExpensesStore.State("limit") limit;
-  @ExpensesStore.State("page") page;
-  @ExpensesStore.State("sortBy") sortBy;
-  @ExpensesStore.State("sortByDescending") sortByDescending;
-  @ExpensesStore.Action("setPage") onChangePage;
-  @ExpensesStore.Action("toggleSortBy") onToggleSortBy;
-  @LocalStorage.State("expenses") expenses;
-  @LocalStorage.Action("setExpenses") setExpenses;
+  @ExpensesStore.Getter('sortedItems') data;
+  @ExpensesStore.Getter('total') total;
+  @ExpensesStore.State('limit') limit;
+  @ExpensesStore.State('page') page;
+  @ExpensesStore.State('sortBy') sortBy;
+  @ExpensesStore.State('sortByDescending') sortByDescending;
+  @ExpensesStore.Action('setPage') onChangePage;
+  @ExpensesStore.Action('toggleSortBy') onToggleSortBy;
+  @LocalStorage.State('expenses') expenses;
+  @LocalStorage.Action('setExpenses') setExpenses;
 
   getAltValue(item, key: string) {
     const rowEdited = this.expenses.find(r => r.id === item.id);
@@ -181,7 +181,7 @@ export default class extends Vue {
     const date = new Date(Date.parse(dateStr));
     return `${this.standartTwoDigits(String(date.getDate() + 1))}`
       + `/${this.standartTwoDigits(String(date.getMonth() + 1))}`
-      + `/${this.standartTwoDigits(String(date.getFullYear()))}`
+      + `/${this.standartTwoDigits(String(date.getFullYear()))}`;
   }
 }
 </script>

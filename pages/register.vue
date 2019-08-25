@@ -57,12 +57,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Inject } from "vue-property-decorator";
-import { namespace } from "vuex-class";
-import { Validator } from "vee-validate";
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
+import { Validator } from 'vee-validate';
 import 'buefy';
 
-const AuthStore = namespace("auth");
+const AuthStore = namespace('auth');
 
 @Component({
   async fetch({store, redirect}) {
@@ -75,13 +75,13 @@ const AuthStore = namespace("auth");
       username: '',
       email: '',
       password: '',
-      error: null
-    }
+      error: null,
+    };
   },
   computed: {
     redirect() {
       return this.$route.query.redirect;
-    }
+    },
   },
 })
 export default class extends Vue {

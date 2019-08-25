@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Inject, Watch } from "vue-property-decorator";
+import { Component, Vue, Prop, Inject, Watch } from 'vue-property-decorator';
 import Popper from 'popper.js';
 
 @Component({
@@ -42,7 +42,7 @@ export default class extends Vue {
   rerender = 0;
   left: number | string = 0;
   right: number | string = 0;
-  value: Boolean;
+  value: boolean;
   placeholderTrue: string;
   placeholderFalse: string;
   $refs: {

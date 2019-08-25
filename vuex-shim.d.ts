@@ -1,6 +1,6 @@
-import vuex from 'vuex'
+import vuex from 'vuex';
 import { AxiosStatic } from 'axios';
-import veeValidate from "vee-validate";
+import veeValidate from 'vee-validate';
 import Buefy from 'buefy';
 
 declare module 'vuex' {

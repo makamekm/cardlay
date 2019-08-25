@@ -63,7 +63,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Inject } from "vue-property-decorator";
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
 
 @Component({})
 export default class extends Vue {

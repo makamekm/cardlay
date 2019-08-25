@@ -17,12 +17,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Inject } from "vue-property-decorator";
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
 import Navbar from '~/components/navbar.vue';
 
 @Component({
   components: {
-    Navbar
+    Navbar,
   },
 })
 export default class extends Vue {

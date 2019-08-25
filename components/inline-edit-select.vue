@@ -45,7 +45,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Inject } from "vue-property-decorator";
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
 import Popper from 'popper.js';
 
 @Component({
@@ -67,10 +67,10 @@ import Popper from 'popper.js';
 export default class extends Vue {
   isEditing = false;
   isClosing = false;
-  items: {
+  items: Array<{
     key: string;
     label: string;
-  }[];
+  }>;
   placeholder: string;
   popper: Popper;
   $refs: {
@@ -79,8 +79,8 @@ export default class extends Vue {
   };
 
   mounted() {
-  	this.popper = new Popper(this.$refs.target, this.$refs.popup, {
-      placement: 'bottom'
+    this.popper = new Popper(this.$refs.target, this.$refs.popup, {
+      placement: 'bottom',
     });
   }
 

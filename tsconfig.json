@@ -44,6 +44,10 @@
   },
   "compileOnSave": false,
   "suppressImplicitAnyIndexErrors": true,
+  "include": [
+    "**/*.ts",
+    "**/*.vue"
+  ],
   "exclude": [
     "node_modules",
     ".next",

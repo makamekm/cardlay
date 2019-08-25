@@ -50,12 +50,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Inject } from "vue-property-decorator";
-import { namespace } from "vuex-class";
-import { Validator } from "vee-validate";
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
+import { namespace } from 'vuex-class';
+import { Validator } from 'vee-validate';
 import 'buefy';
 
-const AuthStore = namespace("auth");
+const AuthStore = namespace('auth');
 
 @Component({
   async fetch({store, redirect}) {
@@ -67,8 +67,8 @@ const AuthStore = namespace("auth");
     return {
       username: '',
       password: '',
-      error: null
-    }
+      error: null,
+    };
   },
 })
 export default class extends Vue {
