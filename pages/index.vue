@@ -203,6 +203,7 @@ export default class extends Vue {
   th, td {
     white-space: nowrap;
     text-overflow: ellipsis;
+    vertical-align: middle;
 
     &:nth-child(1) {
       min-width: 10rem;
@@ -227,9 +228,5 @@ export default class extends Vue {
     &:nth-child(6) {
       min-width: 10rem;
     }
-  }
-
-  td, th {
-    vertical-align: middle;
   }
 </style>

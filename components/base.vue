@@ -45,13 +45,17 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .lc-container
 {
-  position: absolute;
   display: flex;
   flex-direction: column;
   top: 5px;
   left: 5px;
-  height: calc(100vh - 10px);
-  width: calc(100vw - 10px);
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  min-height: calc(100vh - 10px);
+  min-width: calc(100vw - 10px);
+  max-width: calc(100vw - 10px);
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 1);
   transform: translateX(0) translateY(0);
@@ -70,7 +74,6 @@ export default class extends Vue {
     height: calc(100vh - 10px);
     max-width: calc(100vw - 10px);
     min-width: calc(100vw - 10px);
-    max-height: calc(100vh - 10px);
     min-height: calc(100vh - 10px);
     display: flex;
     flex-direction: column;
@@ -78,7 +81,6 @@ export default class extends Vue {
     & > .lc-content {
       position: relative;
       flex: 1;
-      overflow: auto;
     }
   }
 
@@ -108,8 +110,13 @@ export default class extends Vue {
   }
 
   &.is-loading {
+    position: absolute;
     top: calc(50% - 25px);
     left: calc(50% - 25px);
+    max-height: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    min-width: 50px;
     height: 50px;
     width: 50px;
     animation: rotate-animation 4s ease-in-out infinite alternate;
