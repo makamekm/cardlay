@@ -45,7 +45,7 @@ const config: NuxtConfiguration = {
     short_name: 'Cardlay | Grid',
     description: `Cardlay | Grid | The grid system, provided by Cardlay, is the best tool for you to invest you money`,
     lang: 'en',
-    theme_color: '#0072E1',
+    theme_color: '#212E43',
     start_url: '/',
   },
   modules: [

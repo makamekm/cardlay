@@ -12,7 +12,7 @@
           <tr class="on-appear-scale-left on-delay-3">
             <th>Date</th>
             <th class="interactable" @click="onToggleSortBy('merchant')">
-              <div class="columns is-vcentered">
+              <div class="columns is-mobile is-vcentered">
                 <div class="column">
                   Merchant
                 </div>
@@ -27,7 +27,7 @@
               </div>
             </th>
             <th class="interactable" @click="onToggleSortBy('categoryName')">
-              <div class="columns is-vcentered">
+              <div class="columns is-mobile is-vcentered">
                 <div class="column">
                   Category
                 </div>
@@ -42,7 +42,7 @@
               </div>
             </th>
             <th class="interactable" @click="onToggleSortBy('amount')">
-              <div class="columns is-vcentered is-variable is-3">
+              <div class="columns is-mobile is-vcentered is-variable is-3">
                 <div class="column has-text-right">
                   Amount
                 </div>
@@ -101,7 +101,7 @@
         <tfoot>
           <tr>
             <td colspan="6" class="p-t-8 p-b-8 has-text-centered">
-              <div class="columns is-centered on-appear-slide-up on-delay-4">
+              <div class="columns is-mobile is-centered on-appear-slide-up on-delay-4">
                 <div class="column is-one-third">
                   <b-pagination
                     :total="total"
@@ -188,32 +188,35 @@ export default class extends Vue {
 
 <style lang="scss">
   table {
-    table-layout: fixed;
+    table-layout: auto;
   }
 
-  th {
+  th, td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
     &:nth-child(1) {
-      width: 80%;
+      min-width: 10rem;
     }
 
     &:nth-child(2) {
-      width: 300%;
+      min-width: 20rem;
     }
 
     &:nth-child(3) {
-      width: 200%;
+      min-width: 10rem;
     }
 
     &:nth-child(4) {
-      width: 150%;
+      min-width: 9rem;
     }
 
     &:nth-child(5) {
-      width: 80%;
+      min-width: 6rem;
     }
 
     &:nth-child(6) {
-      width: 130%;
+      min-width: 10rem;
     }
   }
 

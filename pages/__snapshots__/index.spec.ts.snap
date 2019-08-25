@@ -13,7 +13,7 @@ exports[`page index should renders properly with data 1`] = `
         <tr class="on-appear-scale-left on-delay-3">
           <th>Date</th>
           <th class="interactable">
-            <div class="columns is-vcentered">
+            <div class="columns is-mobile is-vcentered">
               <div class="column">
                 Merchant
               </div>
@@ -21,7 +21,7 @@ exports[`page index should renders properly with data 1`] = `
             </div>
           </th>
           <th class="interactable">
-            <div class="columns is-vcentered">
+            <div class="columns is-mobile is-vcentered">
               <div class="column">
                 Category
               </div>
@@ -29,7 +29,7 @@ exports[`page index should renders properly with data 1`] = `
             </div>
           </th>
           <th class="interactable">
-            <div class="columns is-vcentered is-variable is-3">
+            <div class="columns is-mobile is-vcentered is-variable is-3">
               <div class="column has-text-right">
                 Amount
               </div>
@@ -44,7 +44,7 @@ exports[`page index should renders properly with data 1`] = `
       <tfoot>
         <tr>
           <td colspan="6" class="p-t-8 p-b-8 has-text-centered">
-            <div class="columns is-centered on-appear-slide-up on-delay-4">
+            <div class="columns is-mobile is-centered on-appear-slide-up on-delay-4">
               <div class="column is-one-third">
                 <nav class="pagination"><a role="button" href="#" disabled="disabled" aria-label="Previous page" class="pagination-previous"><span class="icon" aria-hidden="true"><i class="fa fa-angle-left fa-lg"></i></span></a> <a role="button" href="#" disabled="disabled" aria-label="Next page" class="pagination-next"><span class="icon" aria-hidden="true"><i class="fa fa-angle-right fa-lg"></i></span></a>
                   <ul class="pagination-list">
@@ -78,7 +78,7 @@ exports[`page index should renders properly with no data 1`] = `
         <tr class="on-appear-scale-left on-delay-3">
           <th>Date</th>
           <th class="interactable">
-            <div class="columns is-vcentered">
+            <div class="columns is-mobile is-vcentered">
               <div class="column">
                 Merchant
               </div>
@@ -86,7 +86,7 @@ exports[`page index should renders properly with no data 1`] = `
             </div>
           </th>
           <th class="interactable">
-            <div class="columns is-vcentered">
+            <div class="columns is-mobile is-vcentered">
               <div class="column">
                 Category
               </div>
@@ -94,7 +94,7 @@ exports[`page index should renders properly with no data 1`] = `
             </div>
           </th>
           <th class="interactable">
-            <div class="columns is-vcentered is-variable is-3">
+            <div class="columns is-mobile is-vcentered is-variable is-3">
               <div class="column has-text-right">
                 Amount
               </div>
@@ -109,7 +109,7 @@ exports[`page index should renders properly with no data 1`] = `
       <tfoot>
         <tr>
           <td colspan="6" class="p-t-8 p-b-8 has-text-centered">
-            <div class="columns is-centered on-appear-slide-up on-delay-4">
+            <div class="columns is-mobile is-centered on-appear-slide-up on-delay-4">
               <div class="column is-one-third">
                 <nav class="pagination"><a role="button" href="#" disabled="disabled" aria-label="Previous page" class="pagination-previous"><span class="icon" aria-hidden="true"><i class="fa fa-angle-left fa-lg"></i></span></a> <a role="button" href="#" disabled="disabled" aria-label="Next page" class="pagination-next"><span class="icon" aria-hidden="true"><i class="fa fa-angle-right fa-lg"></i></span></a>
                   <ul class="pagination-list">
