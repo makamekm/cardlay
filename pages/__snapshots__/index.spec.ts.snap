@@ -40,7 +40,7 @@ exports[`page index should renders properly with data 1`] = `
           <th>Status</th>
         </tr>
       </thead>
-      <tbody name="table-row-on" duration="[object Object]"></tbody>
+      <tbody></tbody>
       <tfoot>
         <tr>
           <td colspan="6" class="p-t-8 p-b-8 has-text-centered">
@@ -105,7 +105,7 @@ exports[`page index should renders properly with no data 1`] = `
           <th>Status</th>
         </tr>
       </thead>
-      <tbody name="table-row-on" duration="[object Object]"></tbody>
+      <tbody></tbody>
       <tfoot>
         <tr>
           <td colspan="6" class="p-t-8 p-b-8 has-text-centered">
