@@ -67,9 +67,16 @@
             v-bind:key="item.id">
               <td>{{parseDate(item.date)}}</td>
               <td class="p-t-2 p-b-2 p-r-2 p-l-2">
-                <inline-edit-text
-                  :value="getAltValue(item, 'merchant')"
-                  @change="setValue(item, 'merchant', $event)"/>
+                <div class="columns is-mobile is-vcentered is-gapless">
+                  <div class="column is-narrow">
+                    <merchant-icon class="p-l-4 p-r-4" :value="getAltValue(item, 'merchant')"/>
+                  </div>
+                  <div class="column">
+                    <inline-edit-text
+                      :value="getAltValue(item, 'merchant')"
+                      @change="setValue(item, 'merchant', $event)"/>
+                  </div>
+                </div>
               </td>
               <td class="p-t-2 p-b-2 p-r-2 p-l-2">
                 <inline-edit-select
@@ -128,6 +135,7 @@
 import InlineEditText from '../components/inline-edit-text.vue';
 import InlineEditSelect from '../components/inline-edit-select.vue';
 import ToggleBox from '../components/toggle-box.vue';
+import MerchantIcon from '../components/merchant-icon.vue';
 import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
 import { namespace } from 'vuex-class';
 
@@ -139,6 +147,7 @@ const LocalStorage = namespace('localStorage');
     InlineEditText,
     InlineEditSelect,
     ToggleBox,
+    MerchantIcon,
   },
   fetch: async props => props.store.dispatch('expenses/loadItems'),
 })
