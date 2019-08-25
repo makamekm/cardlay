@@ -60,7 +60,7 @@
             <th>Status</th>
           </tr>
         </thead>
-        <tbody is="transition-group" name="table-row-on" :duration="{ enter: 500, leave: 0 }">
+        <tbody>
           <tr
             :class="'on-appear-scale-left on-delay-' + (index < 6 ? (index + 1) : 7)"
             v-for="(item, index) in data"
@@ -231,32 +231,5 @@ export default class extends Vue {
 
   td, th {
     vertical-align: middle;
-  }
-
-  @keyframes on-move-animation {
-    0% {
-      opacity: 0;
-      transform: scale(0) rotateY(90deg);
-      max-height: 0;
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) translateX(0);
-      max-height: 3.5rem;
-    }
-  }
-
-  .on-move {
-    opacity: 0;
-    transform: scale(0) rotateY(90deg);
-    animation: on-move-animation 0.5s ease-in-out forwards;
-  }
-
-  tr {
-    transition: all 0.5s;
-  }
-
-  .table-row-on-move, .table-row-on-enter-active, .table-row-on-leave-active {
-    animation-play-state: initial;
   }
 </style>
