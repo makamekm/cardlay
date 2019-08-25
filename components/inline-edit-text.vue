@@ -1,7 +1,7 @@
 <template>
   <div :class="{'inline-edit-input': true, 'is-editing': isEditing}">
     <div class="inline-edit-input--value">
-      <div class="columns is-vcentered">
+      <div class="columns is-mobile is-vcentered">
         <div class="column" @dblclick="onStartEdit()">
           {{value}}
         </div>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="inline-edit-input--input">
-      <div class="columns is-vcentered is-gapless">
+      <div class="columns is-mobile is-vcentered is-gapless">
         <div class="column">
           <input
             ref="input"

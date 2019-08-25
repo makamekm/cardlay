@@ -62,7 +62,7 @@
         </thead>
         <tbody is="transition-group" name="table-row-on" :duration="{ enter: 500, leave: 0 }">
           <tr
-            :class="'ttrow on-appear-scale-left on-delay-' + (index < 6 ? (index + 1) : 7)"
+            :class="'on-appear-scale-left on-delay-' + (index < 6 ? (index + 1) : 7)"
             v-for="(item, index) in data"
             v-bind:key="item.id">
               <td>{{parseDate(item.date)}}</td>

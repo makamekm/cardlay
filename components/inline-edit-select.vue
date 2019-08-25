@@ -1,7 +1,7 @@
 <template>
   <div :class="{'inline-edit-select': true, 'is-editing': isEditing}">
     <div class="inline-edit-select--value">
-      <div class="columns is-vcentered">
+      <div class="columns is-mobile is-vcentered">
         <div class="column" @dblclick="onStartEdit()">
           {{value}}
         </div>
@@ -14,7 +14,7 @@
     </div>
     <div class="inline-edit-select--input">
       <div class="inline-edit-select--input-control" ref="target">
-        <div class="columns is-vcentered">
+        <div class="columns is-mobile is-vcentered">
           <div class="column">
             <b>{{placeholder}}</b>
           </div>
