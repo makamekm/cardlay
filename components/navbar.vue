@@ -1,13 +1,23 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-      <nuxt-link class="navbar-item p-l-7 p-r-7 p-t-6 p-b-6" to="/" exact>
+      <nuxt-link class="navbar-item p-l-7 p-r-7 p-t-6 p-b-6" to="/" exact @click="isMenuOpen = false">
         <img src="/logo.svg" style="min-height: 38px; max-height: 38px;">
       </nuxt-link>
+      <a
+        role="button"
+        :class="{'navbar-burger m-r-5': true, 'is-active': isMenuOpen}"
+        data-target="navMenu"
+        aria-label="menu"
+        aria-expanded="false"
+        @click="isMenuOpen = !isMenuOpen"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-    <div class="navbar-menu">
-    </div>
-    <div class="navbar-menu">
+    <div :class="{'navbar-menu': true, 'is-active': isMenuOpen}" @click="isMenuOpen = false">
       <div class="navbar-end">
         <nuxt-link class="navbar-item p-l-6 p-r-6" to="/long" active-class="is-active" exact>
           Loading Example
@@ -57,6 +67,8 @@ import { Component, Vue, Prop, Inject } from "vue-property-decorator";
 
 @Component({})
 export default class extends Vue {
+  isMenuOpen = false;
+
   get isLoading() {
     return this.$store.state.auth.isLoading;
   }

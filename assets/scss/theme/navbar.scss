@@ -35,4 +35,9 @@
   .navbar-item {
     color: $text !important;
   }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
 }
