@@ -108,11 +108,10 @@ export default class extends Vue {
   }
 
   &.is-loading {
-    top: 50%;
-    left: 50%;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
     height: 50px;
     width: 50px;
-    transform: translateX(-50%) translateY(-50%);
     animation: rotate-animation 4s ease-in-out infinite alternate;
     animation-direction: alternate;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2));
