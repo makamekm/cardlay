@@ -59,7 +59,6 @@ export default class extends Vue {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 1);
   transform: translateX(0) translateY(0);
-  overflow: hidden;
   transition: all 0.3s;
   opacity: 0;
 
@@ -110,7 +109,7 @@ export default class extends Vue {
   }
 
   &.is-loading {
-    position: absolute;
+    position: fixed;
     top: calc(50% - 25px);
     left: calc(50% - 25px);
     max-height: 50px;
