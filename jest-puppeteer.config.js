@@ -12,7 +12,7 @@ async function getConfig() {
     server: {
       command: "ts-node --project ./tsconfig.express.json ./server.ts " + port,
       port: port,
-      launchTimeout: 30000,
+      launchTimeout: 60000,
       debug: true,
       usedPortAction: "error",
     },

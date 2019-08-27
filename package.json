@@ -25,7 +25,14 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r ts-node/register node_modules/.bin/jest --runInBand",
-    "verify": "run-p build lint test"
+    "verify:slow": "run-p build lint test:all",
+    "verify:fast": "run-p lint test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm verify:fast",
+      "pre-push": "npm verify:slow"
+    }
   },
   "dependencies": {
     "@nestjs/common": "6.5.3",
@@ -93,6 +100,7 @@
     "jest-puppeteer": "4.3.0",
     "puppeteer": "1.19.0",
     "get-port": "5.0.0",
-    "ts-node-dev": "1.0.0-pre.39"
+    "ts-node-dev": "1.0.0-pre.39",
+    "husky": "3.0.4"
   }
 }
