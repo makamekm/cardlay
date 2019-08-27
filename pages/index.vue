@@ -62,7 +62,7 @@
         </thead>
         <tbody>
           <tr
-            :class="'on-appear-scale-left on-delay-' + (index < 6 ? (index + 1) : 7)"
+            :class="'on-appear-scale-left on-delay-' + (index < 10 ? (index + 1) : 11)"
             v-for="(item, index) in data"
             v-bind:key="item.id">
               <td>{{parseDate(item.date)}}</td>
