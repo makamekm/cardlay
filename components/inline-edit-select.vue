@@ -15,8 +15,8 @@
     <div class="inline-edit-select--input">
       <div class="inline-edit-select--input-control" ref="target">
         <div class="columns is-mobile is-vcentered">
-          <div class="column">
-            <b>{{placeholder}}</b>
+          <div class="column inline-edit-select--input-control--placeholder">
+            {{placeholder}}
           </div>
           <div class="column is-narrow font-size-0">
             <i class="fas is-size-5 fa-chevron-down"/>
@@ -194,6 +194,10 @@ export default class extends Vue {
         &::placeholder {
           opacity: 0.67;
           color: inherit;
+        }
+
+        .inline-edit-select--input-control--placeholder {
+          font-weight: 600;
         }
       }
     }

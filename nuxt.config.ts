@@ -15,7 +15,7 @@ const config: NuxtConfiguration = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap' },
+      { rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900' },
       {
         rel: 'stylesheet',
         href: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css',

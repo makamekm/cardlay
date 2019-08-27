@@ -109,7 +109,7 @@ export default class extends Vue {
 
     & > .toggle-box--value--false, & > .toggle-box--value--true {
       font-size: 0.7em;
-      font-weight: 800;
+      font-weight: 600;
       padding: 0.25rem 0.65rem;
       border-radius: 100rem;
       z-index: 1;

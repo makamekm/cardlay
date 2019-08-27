@@ -61,6 +61,7 @@ export default class extends Vue {
   transform: translateX(0) translateY(0);
   transition: all 0.3s;
   opacity: 0;
+  overflow: hidden;
 
   &.is-mounted {
     opacity: 1;
@@ -69,11 +70,6 @@ export default class extends Vue {
   & > .lc-container-child {
     flex: 1;
     content: '';
-    width: calc(100vw - 10px);
-    height: calc(100vh - 10px);
-    max-width: calc(100vw - 10px);
-    min-width: calc(100vw - 10px);
-    min-height: calc(100vh - 10px);
     display: flex;
     flex-direction: column;
 
