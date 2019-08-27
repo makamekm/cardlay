@@ -30,8 +30,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm verify:fast",
-      "pre-push": "npm verify:slow"
+      "pre-commit": "npm run verify:fast",
+      "pre-push": "npm run verify:slow"
     }
   },
   "dependencies": {
