@@ -4,6 +4,8 @@
 
 _Cardlay | Demo | Vue, Nuxt, Nest, Buefy, Bulma_
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 The project reflects the idea of using Nest & Nuxt and natural animation flow. The mockups were used to achieve the best looking interface, but not pixel perfect, because they have some defects.
 
 ## Development:

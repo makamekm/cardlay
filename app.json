@@ -1,4 +1,9 @@
 {
+  "name": "cardclay-demo",
+  "description": "The project reflects the idea of using Nest & Nuxt and natural animation flow [nuxt, vue, nest, bulma, buefy].",
+  "repository": "https://github.com/makamekm/cardlay",
+  "logo": "https://raw.github.com/makamekm/cardlay/master/static/icon.svg",
+  "keywords": ["node", "nuxt", "vue", "nest", "bulma", "buefy"],
   "addons": [
 
   ],
@@ -23,7 +28,6 @@
       "quantity": 1
     }
   },
-  "name": "cardclay-demo",
   "scripts": {
   },
   "stack": "heroku-18"
