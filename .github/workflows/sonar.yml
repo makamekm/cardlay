@@ -22,6 +22,7 @@ jobs:
         npm install
         npm run lint:report
         npm run test:simple
+        sed -i'' -e "s|SF:$(pwd)/|SF:|g" coverage/lcov.info
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
