@@ -1,4 +1,4 @@
-# Cardlay
+# Cardlay [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=makamekm_cardlay&metric=alert_status)](https://sonarcloud.io/dashboard?id=makamekm_cardlay)
 
 [Heroku Link: https://cardlay.herokuapp.com/](https://cardlay.herokuapp.com/)
 
