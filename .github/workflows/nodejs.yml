@@ -22,7 +22,7 @@ jobs:
         npm install
         npm run lint
         npm run test
-    - uses: actions/checkout@master
+        npm run lint:report
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:

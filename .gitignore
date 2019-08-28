@@ -61,5 +61,6 @@ typings/
 /.api
 /.nuxt
 /bin
+tslint-report.json
 sw.*
 __diff_output__
