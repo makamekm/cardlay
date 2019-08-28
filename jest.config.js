@@ -105,4 +105,5 @@ module.exports = {
     "<rootDir>/**/*.vue",
     "<rootDir>/**/*.ts",
   ],
+  "reporters": ["default",  "jest-sonar"],
 };

@@ -102,6 +102,7 @@
     "puppeteer": "1.19.0",
     "get-port": "5.0.0",
     "ts-node-dev": "1.0.0-pre.39",
-    "husky": "3.0.4"
+    "husky": "3.0.4",
+    "jest-sonar": "0.2.2"
   }
 }

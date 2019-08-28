@@ -62,5 +62,6 @@ typings/
 /.nuxt
 /bin
 tslint-report.json
+sonar-report.xml
 sw.*
 __diff_output__
