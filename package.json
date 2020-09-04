@@ -58,7 +58,7 @@
     "express": "4.17.1",
     "graphql": "14.4.2",
     "graphql-tools": "4.0.5",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.1",
     "nodemon": "1.19.1",
     "nuxt": "2.8.1",
     "nuxt-property-decorator": "2.3.0",
